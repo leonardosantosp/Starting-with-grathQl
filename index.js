@@ -7,6 +7,7 @@ const typeDefs = gql`
     nome: String
     ativo: Boolean
     id: ID
+    tecnologias: [String!]! #retorna um array, sendo vazio ou não
   }
 `
 const resolvers = {
@@ -25,6 +26,9 @@ const resolvers = {
     },
     id() {
       return 1
+    },
+    tecnologias() {
+      return ['GraphQL', 'Node', 'Kotlin']
     }
   }
 }
